@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func sure() {
         
-        sureButton.enabled = false
+//        sureButton.enabled = false
         
         let sharedDefault = NSUserDefaults(suiteName: "group.cn.hehe.YHAddressBook")
         
@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         sharedDefault?.setObject(phoneTextfield.text, forKey: String(format: "YHContactPhone_%@", dateStr))
         sharedDefault?.setObject(arr, forKey: "Dates")
         sharedDefault?.synchronize()
+        
+        navigationController?.popViewControllerAnimated(true)
         
     }
 
