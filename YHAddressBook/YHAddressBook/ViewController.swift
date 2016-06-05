@@ -39,8 +39,8 @@ class ViewController: UIViewController {
             arr!.append(dateStr)
         }
         
-        sharedDefault?.setValue(nameTextfield.text, forKeyPath: String(format: "YHContact_%@", dateStr))
-        sharedDefault?.setValue(phoneTextfield.text, forKey: String(format: "YHContactPhone_%@", dateStr))
+        sharedDefault?.setObject(nameTextfield.text, forKey: String(format: "YHContact_%@", dateStr))
+        sharedDefault?.setObject(phoneTextfield.text, forKey: String(format: "YHContactPhone_%@", dateStr))
         sharedDefault?.setObject(arr, forKey: "Dates")
         sharedDefault?.synchronize()
         
