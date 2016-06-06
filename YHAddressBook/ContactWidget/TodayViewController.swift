@@ -50,18 +50,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     private func update() {
         
-        for subview in view.subviews {
-            subview.removeFromSuperview()
-        }
-        
         let sharedDefault = NSUserDefaults(suiteName: "group.cn.hehe.YHAddressBook")
         let arr = sharedDefault?.objectForKey("Dates") as? [String]
         
-        let margin :CGFloat = 20.0
-        let count : CGFloat = 5.0
-        let width = (UIScreen.mainScreen().bounds.width-(count+1)*margin)/count
-        
         if let _ = arr {
+            
+            for subview in view.subviews {
+                subview.removeFromSuperview()
+            }
+            
+            let margin :CGFloat = 20.0
+            let count : CGFloat = 5.0
+            let width = (UIScreen.mainScreen().bounds.width-(count+1)*margin)/count
+            
             for (index,dateStr) in arr!.enumerate() {
                 let button = UIButton()
                 button.layer.borderWidth = 1
