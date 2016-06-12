@@ -78,7 +78,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 view.addSubview(button)
                 
                 if index == arr!.count-1 {
-                    preferredContentSize = CGSizeMake(UIScreen.mainScreen().bounds.height, CGRectGetMaxY(button.frame)+20)
+                    preferredContentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, CGRectGetMaxY(button.frame)+20)
                 }
             }
         }
